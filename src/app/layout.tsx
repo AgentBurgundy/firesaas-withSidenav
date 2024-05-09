@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientProviders from "@/lib/context/ClientProviders";
 import Navbar from "@/components/nav/Navbar";
-import Footer from "@/components/nav/Footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -25,9 +24,7 @@ export default function RootLayout({
       {/* Change your theme HERE */}
       <body className={inter.className} data-theme="cupcake">
         <ClientProviders>
-          <Navbar />
-          {children}
-          <Footer />
+          <Navbar>{children}</Navbar>
         </ClientProviders>
       </body>
     </html>
